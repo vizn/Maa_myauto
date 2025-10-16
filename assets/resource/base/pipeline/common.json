@@ -1,0 +1,195 @@
+{
+    "__mpe_config_common": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "common",
+            "version": "v0.5.3"
+        }
+    },
+    "进入-主界面": {
+        "next": [
+            "取消",
+            "确定",
+            "关闭",
+            "使用",
+            "主界面"
+        ]
+    },
+    "取消": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click"
+    },
+    "确定": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "action": "Click"
+    },
+    "使用": {
+        "recognition": "OCR",
+        "expected": "使用",
+        "action": "Click"
+    },
+    "关闭": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "zonghe/zhujiemian_shiyong_cha.png"
+                ],
+                "roi": [
+                    1115,
+                    82,
+                    42,
+                    36
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "主界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "zonghe/jiahao.png",
+                    "zonghe/chenghao.png",
+                    "zonghe/baoguo.png",
+                    "zonghe/baoguo_man.png",
+                    "zonghe/sectClose.png"
+                ],
+                "roi": [
+                    1197,
+                    540,
+                    78,
+                    157
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 111
+            }
+        },
+        "inverse": true,
+        "pre_delay": 1000,
+        "post_wait_freezes": 100,
+        "post_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 3085
+            }
+        }
+    },
+    "战斗中-等待100秒": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "zhandou/zidong.png",
+            "zhandou/quxiao.png"
+        ],
+        "roi": [
+            1175,
+            549,
+            103,
+            159
+        ],
+        "pre_wait_freezes": 100000
+    },
+    "战斗中-等待50秒": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "zhandou/zidong.png",
+            "zhandou/quxiao.png"
+        ],
+        "roi": [
+            1175,
+            549,
+            103,
+            159
+        ],
+        "pre_wait_freezes": 50000
+    },
+    "滑动向下": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1145,
+                    234,
+                    1,
+                    1
+                ],
+                "end": [
+                    1149,
+                    419,
+                    1,
+                    1
+                ]
+            }
+        },
+        "next": [
+            "开始大图"
+        ]
+    },
+    "展开-首页任务栏": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "zonghe/rwl_suojin.png",
+            "zonghe/rwl_suojin2.png"
+        ],
+        "roi": [
+            1219,
+            114,
+            59,
+            62
+        ],
+        "pre_delay": 200,
+        "action": "Click"
+    },
+    "任务栏切换为任务": {
+        "pre_delay": 200,
+        "recognition": "ColorMatch",
+        "upper": [
+            177,
+            175,
+            145
+        ],
+        "lower": [
+            28,
+            31,
+            22
+        ],
+        "roi": [
+            1047,
+            119,
+            35,
+            35
+        ],
+        "count": 950,
+        "action": "Click"
+    },
+    "捉鬼-下滑任务栏": {
+        "post_delay": 200,
+        "action": "MultiSwipe",
+        "swipes": [
+            {
+                "begin": [
+                    1147,
+                    207,
+                    1,
+                    1
+                ],
+                "end": [
+                    1138,
+                    403,
+                    1,
+                    1
+                ]
+            }
+        ]
+    }
+}

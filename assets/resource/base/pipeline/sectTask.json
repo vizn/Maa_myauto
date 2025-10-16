@@ -1,0 +1,303 @@
+{
+    "__mpe_config_sectTask": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "sectTask",
+            "version": "v0.5.3"
+        }
+    },
+    "师门任务": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 147
+            }
+        },
+        "next": [
+            "shimen_renwu2_dianji"
+        ],
+        "interrupt": [
+            "展开-首页任务栏",
+            "任务栏切换为任务",
+            "捉鬼-下滑任务栏",
+            "主界面"
+        ]
+    },
+    "shimen_renwu2_dianji": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "师门任务"
+                ],
+                "roi": [
+                    1030,
+                    175,
+                    248,
+                    329
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 468
+            }
+        },
+        "next": [
+            "师门-点击去完成"
+        ],
+        "interrupt": [
+            "shimen_renwu2_dianji"
+        ]
+    },
+    "shimen_renwu2_dianji2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "师门"
+                ],
+                "threshold": 0.9,
+                "roi": [
+                    1036,
+                    163,
+                    65,
+                    104
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 95
+            }
+        },
+        "next": [
+            "师门完成确定-图片识别",
+            "师门完成确定-文字识别"
+        ],
+        "interrupt": [
+            "issub_sleep2"
+        ]
+    },
+    "师门-点击去完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    398,
+                    408,
+                    704,
+                    59
+                ],
+                "expected": [
+                    "去完成",
+                    "继续任务"
+                ],
+                "threshold": 0.9
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 453
+            }
+        },
+        "next": [
+            "师门完成确定-图片识别",
+            "师门完成确定-文字识别"
+        ],
+        "interrupt": [
+            "shimenwancheng-九转天阶遮挡",
+            "师门完成-九幽遮挡",
+            "issub_sleep2"
+        ]
+    },
+    "shimenwancheng-九转天阶遮挡": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "九转天阶"
+                ],
+                "roi": [
+                    293,
+                    47,
+                    834,
+                    260
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 1000,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 453
+            }
+        }
+    },
+    "师门完成-九幽遮挡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "zonghe/jiuyoudiyu.png"
+                ],
+                "roi": [
+                    1085,
+                    128,
+                    64,
+                    71
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 1000,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 732
+            }
+        }
+    },
+    "师门完成确定-图片识别": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "shimen/shimenwancheng2.png",
+                "roi": [
+                    404,
+                    181,
+                    444,
+                    80
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 0
+            }
+        },
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "师门完成确定-文字识别": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "师门任务完成"
+                ],
+                "roi": [
+                    430,
+                    180,
+                    410,
+                    96
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 1011
+            }
+        },
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "issub_sleep2": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 2000,
+        "post_wait_freezes": 20000,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 219
+            }
+        }
+    },
+    "__mpe_external_展开-首页任务栏_sectTask": {
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 5
+            }
+        }
+    },
+    "__mpe_external_任务栏切换为任务_sectTask": {
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 100
+            }
+        }
+    },
+    "__mpe_external_捉鬼-下滑任务栏_sectTask": {
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 195
+            }
+        }
+    },
+    "__mpe_external_主界面_sectTask": {
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 17
+            }
+        }
+    }
+}

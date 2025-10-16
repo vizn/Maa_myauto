@@ -1,0 +1,568 @@
+{
+    "$schema": "https://github.com/MaaAssistantArknights/MaaFramework/blob/main/schema/pipeline-v2.schema.json",
+    "科举乡试": {
+        "next": [
+            "主界面-科举乡试"
+        ],
+        "interrupt": [
+            "进入-主界面"
+        ]
+    },
+    "三界奇缘": {
+        "next": [
+            "主界面-三界奇缘"
+        ],
+        "interrupt": [
+            "进入-主界面"
+        ]
+    },
+    "主界面-科举乡试": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "zonghe/jiahao.png",
+                    "zonghe/chenghao.png",
+                    "zonghe/baoguo.png",
+                    "zonghe/baoguo_man.png"
+                ],
+                "roi": [
+                    1197,
+                    540,
+                    78,
+                    157
+                ]
+            }
+        },
+        "post_delay": 500,
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    31
+                ]
+            }
+        },
+        "post_wait_freezes": 100,
+        "next": [
+            "活动-科举乡试"
+        ],
+        "interrupt": [
+            "活动-界面-打开失败"
+        ]
+    },
+    "活动-科举乡试": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/huodong_jiemian_panduan.png",
+                "roi": [
+                    350,
+                    23,
+                    600,
+                    62
+                ]
+            }
+        },
+        "next": [
+            "活动-科举乡试-点击日常活动"
+        ]
+    },
+    "活动-科举乡试-点击日常活动": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "日常活动"
+                ],
+                "roi": [
+                    132,
+                    90,
+                    156,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "活动-科举乡试-向上滑动到顶端"
+        ]
+    },
+    "活动-科举乡试-向上滑动到顶端": {
+        "action": {
+            "type": "MultiSwipe",
+            "param": {
+                "swipes": [
+                    {
+                        "starting": 0,
+                        "begin": [
+                            731,
+                            129,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            732,
+                            444,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "starting": 1000,
+                        "begin": [
+                            731,
+                            129,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            732,
+                            444,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            }
+        },
+        "post_delay": 500,
+        "next": [
+            "活动-科举乡试-开始",
+            "活动-科举乡试-未到开始时间"
+        ],
+        "interrupt": [
+            "宝图活动向下"
+        ]
+    },
+    "活动-科举乡试-未到开始时间": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "richangdati/kejuxiangshi_weikaishi.png",
+                    "richangdati/kejuxiangshi_weikaishi2.png"
+                ]
+            }
+        },
+        "pre_delay": 200,
+        "post_delay": 200,
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "活动-科举乡试-开始": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "richangdati/kejuxiangshi.png",
+                    "richangdati/kejuxiangshi2.png"
+                ],
+                "threshold": 0.8
+            }
+        },
+        "next": [
+            "活动-科举乡试-开始-点击参加"
+        ]
+    },
+    "活动-科举乡试-开始-点击参加": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "参加"
+                ],
+                "roi": "活动-科举乡试-开始"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 1000,
+        "next": [
+            "活动-科举乡试-进入答题界面"
+        ]
+    },
+    "活动-科举乡试-进入答题界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "richangdati/kjxs_datijiemian.png",
+                "roi": [
+                    528,
+                    65,
+                    244,
+                    67
+                ]
+            }
+        },
+        "next": [
+            "活动-科举乡试-结束"
+        ],
+        "interrupt": [
+            "活动-科举乡试-开始答题_普通"
+        ]
+    },
+    "活动-科举乡试-结束": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "学海无涯，少侠可要多多加油吖！"
+                ],
+                "roi": [
+                    580,
+                    351,
+                    407,
+                    65
+                ]
+            }
+        },
+        "pre_delay": 200,
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "活动-科举乡试-开始答题_普通": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "A",
+                "roi": [
+                    475,
+                    313,
+                    53,
+                    75
+                ]
+            }
+        },
+        "pre_delay": 1500,
+        "action": {
+            "type": "Click",
+            "param": {}
+        }
+    },
+    "活动-科举乡试-开始答题agent": {
+        "roi": [
+            516,
+            183,
+            735,
+            152
+        ]
+    },
+    "活动-科举乡试-开始答题agenta": {
+        "roi": [
+            476,
+            308,
+            306,
+            85
+        ]
+    },
+    "活动-科举乡试-开始答题agentb": {
+        "roi": [
+            789,
+            303,
+            309,
+            99
+        ]
+    },
+    "活动-科举乡试-开始答题agentc": {
+        "roi": [
+            401,
+            400,
+            383,
+            144
+        ]
+    },
+    "活动-科举乡试-开始答题agentd": {
+        "roi": [
+            785,
+            400,
+            456,
+            142
+        ]
+    },
+    "主界面-三界奇缘": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "zonghe/jiahao.png",
+                    "zonghe/chenghao.png",
+                    "zonghe/baoguo.png",
+                    "zonghe/baoguo_man.png"
+                ],
+                "roi": [
+                    1197,
+                    540,
+                    78,
+                    157
+                ]
+            }
+        },
+        "post_delay": 500,
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    31
+                ]
+            }
+        },
+        "post_wait_freezes": 100,
+        "next": [
+            "活动-三界奇缘"
+        ],
+        "interrupt": [
+            "活动-界面-打开失败"
+        ]
+    },
+    "活动-三界奇缘": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/huodong_jiemian_panduan.png",
+                "roi": [
+                    350,
+                    23,
+                    600,
+                    62
+                ]
+            }
+        },
+        "next": [
+            "活动-三界奇缘-点击日常活动"
+        ]
+    },
+    "活动-界面-打开失败": {
+        "pre_delay": 1000,
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    31
+                ]
+            }
+        },
+        "post_wait_freezes": 100
+    },
+    "活动-三界奇缘-点击日常活动": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "日常活动"
+                ],
+                "roi": [
+                    132,
+                    90,
+                    156,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 500,
+        "next": [
+            "活动-三界奇缘-向上滑动到顶端"
+        ]
+    },
+    "活动-三界奇缘-向上滑动到顶端": {
+        "action": {
+            "type": "MultiSwipe",
+            "param": {
+                "swipes": [
+                    {
+                        "starting": 0,
+                        "begin": [
+                            731,
+                            129,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            732,
+                            444,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "starting": 1000,
+                        "begin": [
+                            731,
+                            129,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            732,
+                            444,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            }
+        },
+        "post_delay": 500,
+        "next": [
+            "活动-三界奇缘-开始",
+            "活动-三界奇缘-未到开始时间"
+        ],
+        "interrupt": [
+            "宝图活动向下"
+        ]
+    },
+    "活动-三界奇缘-未到开始时间": {
+        "pre_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "richangdati/sanjieqiyuan_weikaishi.png",
+                    "richangdati/sanjieqiyuan_weikaishi2.png",
+                    "richangdati/sanjieqiyuan_weikaishi3.png"
+                ],
+                "threshold": 0.9,
+                "roi": [
+                    316,
+                    76,
+                    834,
+                    433
+                ]
+            }
+        },
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "活动-三界奇缘-开始": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "richangdati/sanjieqiyuan.png",
+                    "richangdati/sanjieqiyuan2.png",
+                    "richangdati/sanjieqiyuan3.png",
+                    "richangdati/sanjieqiyuan4.png"
+                ],
+                "roi": [
+                    316,
+                    76,
+                    834,
+                    433
+                ],
+                "threshold": 0.9
+            }
+        },
+        "next": [
+            "活动-三界奇缘-开始-点击参加"
+        ]
+    },
+    "活动-三界奇缘-开始-点击参加": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "参加"
+                ],
+                "roi": "活动-三界奇缘-开始"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 1000,
+        "next": [
+            "活动-三界奇缘-进入答题界面"
+        ]
+    },
+    "活动-三界奇缘-进入答题界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "richangdati/sjqy_datijiemian.png"
+                ],
+                "roi": [
+                    130,
+                    211,
+                    60,
+                    213
+                ]
+            }
+        },
+        "next": [
+            "活动-三界奇缘-结束"
+        ],
+        "interrupt": [
+            "活动-三界奇缘-开始答题"
+        ]
+    },
+    "活动-三界奇缘-结束": {
+        "pre_delay": 200,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "恭喜少侠完成所有题目"
+                ],
+                "roi": [
+                    662,
+                    413,
+                    262,
+                    43
+                ]
+            }
+        },
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "活动-三界奇缘-开始答题": {
+        "pre_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "richangdati/sjqy_daan.png",
+                    "richangdati/sjqy_daan1.png",
+                    "richangdati/sjqy_daan2.png"
+                ],
+                "roi": [
+                    450,
+                    340,
+                    227,
+                    92
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 500
+    },
+    "活动-三界奇缘-开始答题_agent": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "sjqy_tiku"
+            }
+        }
+    }
+}

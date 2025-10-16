@@ -1,0 +1,554 @@
+{
+    "__mpe_config_新建Pipeline4": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "新建Pipeline4",
+            "version": "v0.5.3"
+        }
+    },
+    "运镖任务": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 651
+            }
+        },
+        "next": [
+            "押送普通镖银",
+            "识别位置-长安城-运镖-过渡"
+        ],
+        "interrupt": [
+            "进入-主界面"
+        ]
+    },
+    "识别位置-长安城-运镖-过渡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "zonghe/chenghao.png",
+                    "zonghe/jiahao.png"
+                ],
+                "roi": [
+                    1206,
+                    637,
+                    66,
+                    57
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 601
+            }
+        },
+        "next": [
+            "识别位置-长安城-运镖"
+        ],
+        "interrupt": [
+            "打开大地图_运镖"
+        ]
+    },
+    "识别位置-长安城-运镖": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "长安城"
+                ],
+                "roi": [
+                    108,
+                    22,
+                    117,
+                    31
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "post_delay": 3000,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 282
+            }
+        },
+        "next": [
+            "打开小地图_郑镖头"
+        ]
+    },
+    "打开大地图_运镖": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    41
+                ]
+            }
+        },
+        "pre_wait_freezes": 100,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 693
+            }
+        },
+        "next": [
+            "传送长安城_运镖"
+        ],
+        "interrupt": [
+            "打开大地图_运镖_判断"
+        ]
+    },
+    "打开大地图_运镖_判断": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/ditu_jiemian_panduan.png",
+                "roi": [
+                    111,
+                    32,
+                    83,
+                    79
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    41
+                ]
+            }
+        },
+        "inverse": true,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 810
+            }
+        }
+    },
+    "传送长安城_运镖": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "zonghe/tab_changancheng.png",
+                    "zonghe/tab_changancheng2.png",
+                    "zonghe/tab_changancheng3.png"
+                ],
+                "roi": ""
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 1000,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 531
+            }
+        }
+    },
+    "打开小地图_郑镖头": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 61
+            }
+        },
+        "pre_wait_freezes": 1,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 282
+            }
+        },
+        "next": [
+            "点击郑镖头"
+        ],
+        "interrupt": [
+            "打开小地图_郑镖头_判断"
+        ]
+    },
+    "打开小地图_郑镖头_判断": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "baotu/cac_tab_panduan.png",
+                "roi": [
+                    200,
+                    2,
+                    80,
+                    75
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 61
+            }
+        },
+        "inverse": true,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1740,
+                "y": 391
+            }
+        }
+    },
+    "点击郑镖头": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "郑镖头"
+                ],
+                "roi": [
+                    226,
+                    399,
+                    105,
+                    52
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_wait_freezes": 6000,
+        "__mpe_code": {
+            "position": {
+                "x": 1740,
+                "y": 142
+            }
+        },
+        "next": [
+            "押送普通镖银"
+        ]
+    },
+    "押送普通镖银": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "押送普通镖银"
+                ],
+                "roi": [
+                    933,
+                    262,
+                    307,
+                    237
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2030,
+                "y": 157
+            }
+        },
+        "next": [
+            "运镖已完成三次",
+            "运镖活跃度不够",
+            "押送普通镖_确定"
+        ]
+    },
+    "运镖已完成三次": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "本日押送普通镖次数达到上限",
+                    "本日"
+                ],
+                "roi": [
+                    417,
+                    208,
+                    441,
+                    240
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_wait_freezes": 80,
+        "__mpe_code": {
+            "position": {
+                "x": 2320,
+                "y": 0
+            }
+        }
+    },
+    "运镖活跃度不够": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "运镖需要活跃度达到50点，你的活跃度不够"
+                ],
+                "roi": [
+                    406,
+                    281,
+                    466,
+                    195
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 111
+            }
+        },
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2320,
+                "y": 249
+            }
+        }
+    },
+    "押送普通镖_确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确定"
+                ],
+                "roi": [
+                    656,
+                    367,
+                    189,
+                    96
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2320,
+                "y": 1063
+            }
+        },
+        "next": [
+            "押送普通镖银"
+        ],
+        "interrupt": [
+            "运镖中"
+        ]
+    },
+    "运镖中": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "距离运镖完成"
+                ],
+                "roi": [
+                    150,
+                    1,
+                    195,
+                    49
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "pre_delay": 30000,
+        "__mpe_code": {
+            "position": {
+                "x": 2610,
+                "y": 1033
+            }
+        }
+    },
+    "在活动中查看运镖任务是否完成": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    31
+                ]
+            }
+        },
+        "pre_wait_freezes": 1000,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 1112
+            }
+        },
+        "next": [
+            "在活动中查看运镖任务是否完成_打开活动界面成功"
+        ],
+        "interrupt": [
+            "在活动中查看运镖任务是否完成_打开活动界面失败"
+        ]
+    },
+    "在活动中查看运镖任务是否完成_打开活动界面成功": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/huodong_jiemian_panduan.png",
+                "roi": [
+                    350,
+                    23,
+                    600,
+                    62
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 958
+            }
+        },
+        "next": [
+            "识别运镖3/3"
+        ],
+        "interrupt": [
+            "滑动向下"
+        ]
+    },
+    "在活动中查看运镖任务是否完成_打开活动界面失败": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/huodong_jiemian_panduan.png",
+                "roi": [
+                    350,
+                    23,
+                    600,
+                    62
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    31
+                ]
+            }
+        },
+        "inverse": true,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 1196
+            }
+        }
+    },
+    "识别运镖3/3": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "次数3/3"
+                ],
+                "roi": [
+                    320,
+                    86,
+                    826,
+                    420
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 810
+            }
+        },
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "__mpe_external_进入-主界面_新建Pipeline4": {
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 872
+            }
+        }
+    },
+    "__mpe_external_战斗中-等待100秒_新建Pipeline4": {
+        "__mpe_code": {
+            "position": {
+                "x": 2610,
+                "y": 1312
+            }
+        }
+    },
+    "__mpe_external_滑动向下_新建Pipeline4": {
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 1029
+            }
+        }
+    }
+}

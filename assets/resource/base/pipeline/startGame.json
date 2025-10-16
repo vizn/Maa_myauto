@@ -1,0 +1,112 @@
+{
+    "__mpe_config_startGame": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "startGame",
+            "version": "v0.5.3"
+        }
+    },
+    "启动游戏": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.netease.my"
+            }
+        },
+        "post_delay": 20000,
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "next": [
+            "登录动画单击跳过"
+        ]
+    },
+    "点击登录游戏": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "登录游戏",
+                "roi": [
+                    562,
+                    505,
+                    148,
+                    41
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 15000,
+        "__mpe_code": {
+            "position": {
+                "x": 824,
+                "y": -58
+            }
+        }
+    },
+    "登录动画单击跳过": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 15000,
+        "__mpe_code": {
+            "position": {
+                "x": 268,
+                "y": 5
+            }
+        },
+        "next": [
+            "点击登录游戏",
+            "登录账号"
+        ]
+    },
+    "登录账号": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "登录"
+                ],
+                "roi": [
+                    604,
+                    412,
+                    70,
+                    41
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 5000,
+        "__mpe_code": {
+            "position": {
+                "x": 533,
+                "y": -37
+            }
+        },
+        "next": [
+            "点击登录游戏"
+        ]
+    },
+    "单人日常": {
+        "next": [
+            "师门任务"
+        ]
+    }
+}
