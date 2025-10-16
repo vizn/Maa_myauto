@@ -72,24 +72,24 @@ jobs:
           out-file-path: "deps"
           extract: true
 
-      - name: Download MFAAvalonia
+      - name: Download Maa_myauto
         if: matrix.os != 'android'
         id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
-          repository: SweetSmellFox/MFAAvalonia
-          fileName: "MFAAvalonia-*-${{ (matrix.os == 'win' && 'win') || (matrix.os == 'macos' && 'osx') || (matrix.os == 'linux' && 'linux') }}-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
+          repository: SweetSmellFox/Maa_myauto
+          fileName: "Maa_myauto-*-${{ (matrix.os == 'win' && 'win') || (matrix.os == 'macos' && 'osx') || (matrix.os == 'linux' && 'linux') }}-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
           latest: true
           out-file-path: "MFA"
           extract: true
 
-      - name: Clean up MFAAvalonia archive
+      - name: Clean up Maa_myauto archive
         if: matrix.os != 'android'
         shell: bash
         run: |
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
           rm -f "${ARCHIVE_FILE_PATH}"
-          echo "Archive cleanup command executed for MFAAvalonia."
+          echo "Archive cleanup command executed for Maa_myauto."
 
       - name: Install
         shell: bash
