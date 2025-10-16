@@ -1,84 +1,272 @@
 {
+    "name": "Maa_myauto",
+    "message": "Maa_myauto工具",
+    "url": "https://github.com/vizn/Maa_myauto",
+    "mirrorchyan_rid": "Maa_myauto",
+    "mirrorchyan_multiplatform": true,
     "controller": [
         {
             "name": "安卓端",
             "type": "Adb"
-        },
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "class_regex": ".*",
-                "window_regex": "Visual Studio"
-            }
         }
     ],
-    "resource": [
-        {
-            "name": "官服",
-            "path": [
-                "{PROJECT_DIR}/resource"
-            ]
-        },
-        {
-            "name": "B 服",
-            "path": [
-                "{PROJECT_DIR}/resource",
-                "{PROJECT_DIR}/resource_bilibili"
-            ]
-        }
-    ],
-    "agent_demo": {
+    "agent": {
         "child_exec": "python",
         "child_args": [
-            "{PROJECT_DIR}/agent/main.py"
+            "{PROJECT_DIR}/../agent/main.py",
+            "-u"
         ]
     },
+    "resource": [
+        {
+            "name": "官服-轻享服",
+            "path": [
+                "{PROJECT_DIR}/resource/base"
+            ]
+        }
+    ],
     "task": [
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
+            "name": "师门任务",
+            "entry": "师门任务",
+            "doc": "请勾选“自动选择每日任务”和“自动完成任务”两个选项，师门任务暂时只做了自动。"
         },
         {
-            "name": "选项任务",
-            "entry": "MyTask2",
+            "name": "秘境降妖",
+            "entry": "秘境降妖"
+        },
+        {
+            "name": "宝图任务",
+            "entry": "宝图任务",
             "option": [
-                "任务选项1"
+                "选择宝图时间"
+            ],
+            "doc": "请选择宝图任务打宝图时间，程序将等待时间结束后检查任务是否完成"
+        },
+        {
+            "name": "运镖普通",
+            "entry": "运镖任务",
+            "option": [
+                "是否检测活力到50"
+            ],
+            "doc": "检查活力是否到50，建议优先选择不检测，请自己排序任务，把运镖放在后边"
+        },
+        {
+            "name": "三界奇缘",
+            "entry": "三界奇缘",
+            "option": [
+                "是否选择题库"
             ]
         },
         {
-            "name": "参数任务",
-            "entry": "MyTask3",
-            "option": [
-                "任务选项1"
-            ],
-            "pipeline_override": {}
+            "name": "科举乡试",
+            "entry": "科举乡试"
         },
         {
-            "name": "带Custom的任务",
-            "entry": "MyTask4"
+            "name": "启动游戏",
+            "entry": "启动游戏",
+            "doc": "启动游戏,登录默认账号角色"
         }
     ],
     "option": {
-        "任务选项1": {
+        "创建队伍-副本": {
             "cases": [
                 {
-                    "name": "文本1",
+                    "name": "不需创建队伍",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本1"
+                        "识别位置-长安城-副本": {
+                            "next": [
+                                "打开小地图_百晓仙子"
+                            ]
                         }
                     }
                 },
                 {
-                    "name": "文本2",
+                    "name": "需要创建队伍",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "320或3本": {
+            "cases": [
+                {
+                    "name": "3副本加两轮鬼",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本2"
+                        "50普通-2-副本完成-退出": {
+                            "next": [
+                                "日常抓鬼-第一轮"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3副本",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "抓鬼-队长-是否创建组队": {
+            "cases": [
+                {
+                    "name": "不创建队伍",
+                    "pipeline_override": {
+                        "识别位置-长安城-抓鬼": {
+                            "next": [
+                                "打开小地图-钟馗"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "创建队伍",
+                    "pipeline_override": {
+                        "识别位置-长安城-抓鬼": {}
+                    }
+                }
+            ]
+        },
+        "抓鬼进入轮次选择": {
+            "cases": [
+                {
+                    "name": "不进入轮次选择",
+                    "pipeline_override": {
+                        "抓鬼一轮完成": {}
+                    }
+                },
+                {
+                    "name": "进入轮次选择",
+                    "pipeline_override": {
+                        "抓鬼一轮完成": {
+                            "next": [
+                                "抓鬼轮次计算-agent"
+                            ]
                         }
                     }
                 }
             ]
+        },
+        "是否选择题库": {
+            "cases": [
+                {
+                    "name": "不选择题库",
+                    "pipeline_override": {
+                        "活动-三界奇缘-进入答题界面": {
+                            "interrupt": [
+                                "活动-三界奇缘-开始答题"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "选择题库",
+                    "pipeline_override": {
+                        "活动-三界奇缘-进入答题界面": {
+                            "interrupt": [
+                                "活动-三界奇缘-开始答题_agent"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "选择宝图时间": {
+            "cases": [
+                {
+                    "name": "69级(11分钟)",
+                    "pipeline_override": {
+                        "baotu_renwu_sleep": {
+                            "pre_delay": 700000
+                        }
+                    }
+                },
+                {
+                    "name": "25级小号(21分钟)",
+                    "pipeline_override": {
+                        "baotu_renwu_sleep": {
+                            "pre_delay": 1260000
+                        }
+                    }
+                }
+            ]
+        },
+        "全自动/手动接取双侠士任务选项": {
+            "default_case": "手动接取",
+            "cases": [
+                {
+                    "name": "全自动",
+                    "pipeline_override": {
+                        "115识别位置-长安城-副本": {
+                            "next": []
+                        }
+                    }
+                },
+                {
+                    "name": "手动接取",
+                    "pipeline_override": {
+                        "115识别位置-长安城-副本": {
+                            "next": [
+                                "115返回长安城"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "只打普通三本及20鬼",
+                    "pipeline_override": {
+                        "115识别位置-长安城-副本": {
+                            "next": [
+                                "115打开小地图-百晓仙子-50普通-1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "是否检测活力到50": {
+            "cases": [
+                {
+                    "name": "不检测（建议选择）",
+                    "pipeline_override": {
+                        "活动-运镖": {
+                            "next": [
+                                "活动-运镖-点击日常活动"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "检测",
+                    "pipeline_override": {
+                        "活动-运镖": {
+                            "next": []
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "advanced": {
+        "输入文本": {
+            "field": "text",
+            "type": "string",
+            "default": "nihao",
+            "pipeline_override": {
+                "shuru": {
+                    "input_text": "{text}"
+                }
+            }
+        },
+        "抓鬼轮次选择": {
+            "field": "number",
+            "type": "int",
+            "default": 2,
+            "pipeline_override": {
+                "抓鬼轮数": {
+                    "custom_action_param": {
+                        "target_count": "{number}"
+                    }
+                }
+            }
         }
     }
 }
