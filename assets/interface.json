@@ -1,22 +1,16 @@
 {
-    "name": "Maa_myauto",
-    "message": "Maa_myauto工具",
-    "url": "https://github.com/vizn/Maa_myauto",
-    "mirrorchyan_rid": "Maa_myauto",
-    "mirrorchyan_multiplatform": true,
     "controller": [
         {
             "name": "安卓端",
             "type": "Adb"
         }
     ],
-    "agent": {
-        "child_exec": "python",
-        "child_args": [
-            "{PROJECT_DIR}/../agent/main.py",
-            "-u"
-        ]
-    },
+    "name": "Maa_myauto", //默认为null
+    "version": "V1.0.0", //默认为null
+    "mirrorchyan_rid": "myauto", //默认为null , 比如 M9A
+    "mirrorchyan_multiplatform": false, //项目多平台字段(从Mirror酱下载的字段)默认为false
+    "url": "https://github.com/vizn/Maa_myauto", //默认为null , 比如 https://github.com/{Github账户}/{Github项目}
+    "custom_title": "Maa_myauto", //默认为null, 使用该字段后，标题栏将只显示custom_title和version
     "resource": [
         {
             "name": "官服-轻享服",
@@ -29,6 +23,9 @@
         {
             "name": "师门任务",
             "entry": "师门任务",
+            "option": [
+                "自动完成任务"
+            ],
             "doc": "请勾选“自动选择每日任务”和“自动完成任务”两个选项，师门任务暂时只做了自动。"
         },
         {
@@ -243,30 +240,6 @@
                     }
                 }
             ]
-        }
-    },
-    "advanced": {
-        "输入文本": {
-            "field": "text",
-            "type": "string",
-            "default": "nihao",
-            "pipeline_override": {
-                "shuru": {
-                    "input_text": "{text}"
-                }
-            }
-        },
-        "抓鬼轮次选择": {
-            "field": "number",
-            "type": "int",
-            "default": 2,
-            "pipeline_override": {
-                "抓鬼轮数": {
-                    "custom_action_param": {
-                        "target_count": "{number}"
-                    }
-                }
-            }
         }
     }
 }

@@ -13,9 +13,6 @@ jobs:
       - id: uploading
         uses: MirrorChyan/release-note-action@v1
         with:
-          mirrorchyan_rid: Maa_myauto
-
-          owner: Vizn
-          repo: Maa_myauto
+          mirrorchyan_rid: MFW-PyQt6
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
