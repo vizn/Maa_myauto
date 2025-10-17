@@ -260,6 +260,12 @@ jobs:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
     needs: [meta, windows, ubuntu, macos, changelog]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -280,6 +286,7 @@ jobs:
 
       - uses: softprops/action-gh-release@v2.2.2
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ needs.changelog.outputs.release_body }}
