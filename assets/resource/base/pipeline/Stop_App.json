@@ -1,0 +1,10 @@
+{
+    "停止": {
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.kurogame.haru.hero"
+            }
+        }
+    }
+}

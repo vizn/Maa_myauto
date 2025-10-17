@@ -1,0 +1,339 @@
+{
+    "启动": {
+        "next": [
+            "关闭公告",
+            "检查分辨率",
+            "关闭纷争战区通知",
+            "关闭拟真围剿通知",
+            "检查主界面"
+        ],
+        "interrupt": [
+            "关闭奖励",
+            "进入游戏",
+            "更新",
+            "关闭低内存提示",
+            "更新中",
+            "打开应用"
+        ]
+    },
+    "更新中": {
+        "post_delay": 5000,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1092,
+                    679,
+                    97,
+                    40
+                ],
+                "expected": "预计时间"
+            }
+        }
+    },
+    "检查分辨率": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "CheckResolution"
+            }
+        },
+        "next": [
+            "提示分辨率错误"
+        ]
+    },
+    "提示分辨率错误": {
+        "focus": {
+            "succeeded": "[color:Tomato]分辨率错误,请设置为1280*720 240DPI[/color]"
+        },
+        "post_delay": 5000,
+        "next": [
+            "提示分辨率错误"
+        ]
+    },
+    "关闭低内存提示": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    332,
+                    177,
+                    657,
+                    299
+                ],
+                "expected": [
+                    "设备",
+                    "当前",
+                    "内存",
+                    "低于"
+                ]
+            }
+        },
+        "next": [
+            "确定",
+            "空任务"
+        ]
+    },
+    "关闭拟真围剿通知": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    597,
+                    275,
+                    426,
+                    60
+                ],
+                "expected": [
+                    "拟真围剿",
+                    "行动",
+                    "完美达成"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    10,
+                    10,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "启动"
+        ]
+    },
+    "关闭纷争战区通知": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    337,
+                    370,
+                    435,
+                    60
+                ],
+                "expected": [
+                    "纷争战区",
+                    "降级保护"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1194,
+                    183,
+                    11,
+                    12
+                ]
+            }
+        },
+        "next": [
+            "启动"
+        ]
+    },
+    "更新": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    352,
+                    248,
+                    241,
+                    42
+                ],
+                "expected": "检测到存在更新"
+            }
+        },
+        "next": [
+            "确定",
+            "空任务"
+        ]
+    },
+    "进入游戏": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    24,
+                    96,
+                    71,
+                    25
+                ],
+                "expected": [
+                    "适龄",
+                    "提示"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    637,
+                    645,
+                    1,
+                    1
+                ]
+            }
+        }
+    },
+    "检查主界面": {
+        "post_delay": 3000,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1074,
+                    309,
+                    95,
+                    52
+                ],
+                "expected": "^战斗$"
+            }
+        },
+        "next": [
+            "关闭纷争战区通知",
+            "关闭拟真围剿通知",
+            "检查主界面2",
+            "启动"
+        ]
+    },
+    "关闭公告": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击空白处关闭"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    10,
+                    10,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "启动"
+        ]
+    },
+    "检查主界面2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1074,
+                    309,
+                    95,
+                    52
+                ],
+                "expected": "^战斗$"
+            }
+        },
+        "next": [
+            "切换主界面状态",
+            "空任务"
+        ]
+    },
+    "打开应用": {
+        "post_delay": 5000,
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.kurogame.haru.hero"
+            }
+        },
+        "next": [
+            "黑屏计数",
+            "空任务"
+        ],
+        "on_error": [
+            "服务器错误提示"
+        ]
+    },
+    "服务器错误提示": {
+        "post_delay": 99999999,
+        "focus": {
+            "succeeded": "[color:Tomato]服务器错误,请选择所在服务器[/color]"
+        }
+    },
+    "黑屏计数": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "count": 90000,
+                "connected": true,
+                "upper": [
+                    0,
+                    0,
+                    0
+                ],
+                "lower": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "Count",
+                "custom_action_param": {
+                    "self": "黑屏计数",
+                    "count": 0,
+                    "target_count": 12,
+                    "next_node": [
+                        "重启游戏"
+                    ]
+                }
+            }
+        }
+    },
+    "切换主界面状态": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1165,
+                    476,
+                    77,
+                    62
+                ],
+                "template": [
+                    "启动/切换主界面状态_默认.png",
+                    "启动/切换主界面状态_家园.png",
+                    "启动/切换主界面状态_白梦游弋.png",
+                    "启动/切换主界面状态_离诗遗城.png",
+                    "启动/切换主界面状态_耀阳映画.png",
+                    "启动/切换主界面状态_花溪憩乡.png",
+                    "启动/切换主界面状态_银光教堂.png",
+                    "启动/切换主界面状态_闲庭疏影.png",
+                    "启动/切换主界面状态_鸣神叹妙.png",
+                    "启动/切换主界面状态_溺梦游歌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "空任务": {},
+    "OCR": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": ""
+            }
+        }
+    }
+}
