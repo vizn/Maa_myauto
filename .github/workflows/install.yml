@@ -107,8 +107,19 @@ jobs:
       - name: Install
         shell: bash
         run: |
+          # 设置Python编码环境
+          export PYTHONIOENCODING=utf-8
+          export LANG=C.UTF-8
+          
+          # 安装依赖
           pip install pyinstaller
           pip install -r requirements.txt
+          
+          # 确保maafw依赖正确安装
+          pip show maafw || echo "Warning: maafw not found, trying to reinstall"
+          pip install --force-reinstall maafw>=4.4.0
+          
+          # 运行安装脚本
           python ./install.py ${{ needs.meta.outputs.tag }}
           
       - name: Download MFW
@@ -151,8 +162,19 @@ jobs:
       - name: Install
         shell: bash
         run: |
+          # 设置Python编码环境
+          export PYTHONIOENCODING=utf-8
+          export LANG=C.UTF-8
+          
+          # 安装依赖
           pip install pyinstaller
           pip install -r requirements.txt
+          
+          # 确保maafw依赖正确安装
+          pip show maafw || echo "Warning: maafw not found, trying to reinstall"
+          pip install --force-reinstall maafw>=4.4.0
+          
+          # 运行安装脚本
           python ./install.py ${{ needs.meta.outputs.tag }}
 
       - name: Download MFW
@@ -195,8 +217,19 @@ jobs:
       - name: Install
         shell: bash
         run: |
+          # 设置Python编码环境
+          export PYTHONIOENCODING=utf-8
+          export LANG=C.UTF-8
+          
+          # 安装依赖
           pip install pyinstaller
           pip install -r requirements.txt
+          
+          # 确保maafw依赖正确安装
+          pip show maafw || echo "Warning: maafw not found, trying to reinstall"
+          pip install --force-reinstall maafw>=4.4.0
+          
+          # 运行安装脚本
           python ./install.py ${{ needs.meta.outputs.tag }}
 
       - name: Download MFW
