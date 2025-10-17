@@ -5,12 +5,12 @@
             "type": "Adb"
         }
     ],
-    "name": "Maa_myauto",
-    "version": "V1.0.0",
-    "mirrorchyan_rid": "myauto",
-    "mirrorchyan_multiplatform": false,
-    "url": "https://github.com/vizn/Maa_myauto",
-    "custom_title": "Maa_myauto",
+    "name": "Maa_myauto", //默认为null
+    "version": "V1.0.0", //默认为null
+    "mirrorchyan_rid": "myauto", //默认为null , 比如 M9A
+    "mirrorchyan_multiplatform": false, //项目多平台字段(从Mirror酱下载的字段)默认为false
+    "url": "https://github.com/vizn/Maa_myauto", //默认为null , 比如 https://github.com/{Github账户}/{Github项目}
+    "custom_title": "Maa_myauto", //默认为null, 使用该字段后，标题栏将只显示custom_title和version
     "resource": [
         {
             "name": "官服-轻享服",

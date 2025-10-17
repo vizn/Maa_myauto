@@ -1,337 +1,195 @@
 {
-    "关闭奖励": {
-        "post_delay": 1000,
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    409,
-                    176,
-                    491,
-                    150
-                ],
-                "template": "通用任务/105157_624_220_86_57__574_170_186_157.png"
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    446,
-                    30,
-                    0,
-                    0
-                ]
-            }
+    "__mpe_config_common": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "common",
+            "version": "v0.5.3"
         }
     },
-    "返回主菜单": {
-        "post_delay": 1000,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    238,
-                    27,
-                    78,
-                    38
-                ],
-                "expected": "主界面"
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
+    "进入-主界面": {
         "next": [
-            "检查主界面2",
-            "关闭奖励",
-            "返回主菜单"
-        ],
-        "interrupt": [
-            "确定"
-        ]
-    },
-    "返回主菜单_图标": {
-        "post_delay": 1000,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    186,
-                    14,
-                    45,
-                    42
-                ],
-                "expected": [
-                    "O",
-                    "o",
-                    "0"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "检查主界面2",
-            "返回主菜单",
-            "返回主菜单_图标"
-        ]
-    },
-    "意外点击_主界面": {
-        "post_delay": 1000,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    758,
-                    199,
-                    361,
-                    368
-                ],
-                "expected": "库街区"
-            }
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    10,
-                    10,
-                    0,
-                    0
-                ]
-            }
-        }
-    },
-    "返回": {
-        "post_delay": 1500,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    76,
-                    18,
-                    62,
-                    34
-                ],
-                "expected": "返回"
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "返回_图标": {
-        "post_delay": 1000,
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    27,
-                    10,
-                    51,
-                    53
-                ],
-                "template": "指挥局/返回.png"
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "返回主菜单_err": {
-        "focus": {
-            "succeeded": "[color:Tomato]识别错误，返回主菜单[/color]",
-            "aborted": true
-        },
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "ScreenShot",
-                "custom_action_param": {
-                    "type": "ERR"
-                }
-            }
-        },
-        "next": [
-            "点击频率过快",
-            "错误处理流程"
-        ]
-    },
-    "错误处理流程": {
-        "next": [
-            "检查分辨率",
-            "检查主界面",
-            "退出血清界面_err",
-            "返回主菜单",
-            "返回主菜单_图标"
-        ],
-        "interrupt": [
+            "取消",
             "确定",
-            "领取藏品_厄愿潮声",
-            "关闭奖励"
-        ],
-        "on_error": [
-            "重启游戏"
+            "关闭",
+            "使用",
+            "主界面"
         ]
     },
-    "重启游戏": {
-        "focus": {
-            "succeeded": "[color:Tomato]未知错误,重启游戏[/color]"
-        },
-        "action": {
-            "type": "StopApp",
-            "param": {
-                "package": "com.kurogame.haru.hero"
-            }
-        },
-        "next": [
-            "启动"
-        ]
-    },
-    "意外点击_物品": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "roi": [
-                    1130,
-                    24,
-                    124,
-                    96
-                ],
-                "template": "幻痛囚笼/关闭奖励.png"
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "跳过剧情": {
-        "post_delay": 1000,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    1118,
-                    22,
-                    149,
-                    33
-                ],
-                "expected": [
-                    "跳",
-                    "过"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "确认跳过",
-            "跳过剧情",
-            "空任务"
-        ]
-    },
-    "确认跳过": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    973,
-                    581,
-                    106,
-                    45
-                ],
-                "expected": "跳过"
-            }
-        },
-        "action": {
-            "type": "Click"
-        }
-    },
-    "点击频率过快": {
-        "post_delay": 1000,
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    257,
-                    236,
-                    339,
-                    78
-                ],
-                "expected": [
-                    "消息发送过于"
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "点击频率过快_确认",
-            "点击频率过快",
-            "错误处理流程"
-        ]
-    },
-    "点击频率过快_确认": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "roi": [
-                    812,
-                    476,
-                    86,
-                    69
-                ],
-                "expected": "确定"
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "next": [
-            "错误处理流程"
-        ]
+    "取消": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click"
     },
     "确定": {
-        "post_delay": 1000,
+        "recognition": "OCR",
+        "expected": "确定",
+        "action": "Click"
+    },
+    "使用": {
+        "recognition": "OCR",
+        "expected": "使用",
+        "action": "Click"
+    },
+    "关闭": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    685,
-                    449,
-                    264,
-                    151
+                "template": [
+                    "zonghe/zhujiemian_shiyong_cha.png"
                 ],
-                "expected": "^确定$"
+                "roi": [
+                    1115,
+                    82,
+                    42,
+                    36
+                ]
             }
         },
         "action": {
             "type": "Click"
         }
     },
-    "退出血清界面_err": {
-        "post_delay": 1000,
+    "主界面": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
-                "roi": [
-                    601,
-                    533,
-                    266,
-                    148
+                "template": [
+                    "zonghe/jiahao.png",
+                    "zonghe/chenghao.png",
+                    "zonghe/baoguo.png",
+                    "zonghe/baoguo_man.png",
+                    "zonghe/sectClose.png"
                 ],
-                "expected": "取消"
+                "roi": [
+                    1197,
+                    540,
+                    78,
+                    157
+                ]
             }
         },
         "action": {
-            "type": "Click"
+            "type": "ClickKey",
+            "param": {
+                "key": 111
+            }
+        },
+        "inverse": true,
+        "pre_delay": 1000,
+        "post_wait_freezes": 100,
+        "post_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 3085
+            }
+        }
+    },
+    "战斗中-等待100秒": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "zhandou/zidong.png",
+            "zhandou/quxiao.png"
+        ],
+        "roi": [
+            1175,
+            549,
+            103,
+            159
+        ],
+        "pre_wait_freezes": 100000
+    },
+    "战斗中-等待50秒": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "zhandou/zidong.png",
+            "zhandou/quxiao.png"
+        ],
+        "roi": [
+            1175,
+            549,
+            103,
+            159
+        ],
+        "pre_wait_freezes": 50000
+    },
+    "滑动向下": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1145,
+                    234,
+                    1,
+                    1
+                ],
+                "end": [
+                    1149,
+                    419,
+                    1,
+                    1
+                ]
+            }
         },
         "next": [
-            "错误处理流程"
+            "开始大图"
+        ]
+    },
+    "展开-首页任务栏": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "zonghe/rwl_suojin.png",
+            "zonghe/rwl_suojin2.png"
+        ],
+        "roi": [
+            1219,
+            114,
+            59,
+            62
+        ],
+        "pre_delay": 200,
+        "action": "Click"
+    },
+    "任务栏切换为任务": {
+        "pre_delay": 200,
+        "recognition": "ColorMatch",
+        "upper": [
+            177,
+            175,
+            145
+        ],
+        "lower": [
+            28,
+            31,
+            22
+        ],
+        "roi": [
+            1047,
+            119,
+            35,
+            35
+        ],
+        "count": 950,
+        "action": "Click"
+    },
+    "捉鬼-下滑任务栏": {
+        "post_delay": 200,
+        "action": "MultiSwipe",
+        "swipes": [
+            {
+                "begin": [
+                    1147,
+                    207,
+                    1,
+                    1
+                ],
+                "end": [
+                    1138,
+                    403,
+                    1,
+                    1
+                ]
+            }
         ]
     }
 }
