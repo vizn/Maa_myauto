@@ -1,123 +1,174 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-  <img alt="LOGO" src="https://cdn.jsdelivr.net/gh/MaaAssistantArknights/design@main/logo/maa-logo_512x512.png" width="256" height="256" />
+  <img alt="LOGO" src="logo.png" width="256" height="256" />
 </p>
 
 <div align="center">
 
-# MaaPracticeBoilerplate
+# MAA_Punish
+
+基于全新架构的 战双帕弥什 小助手。图像技术 + 模拟控制，解放双手！  
+由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 强力驱动！
 
 </div>
 
-本仓库为 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板，开发者可基于此模板直接创建自己的 MaaXXX 项目。
+<p align="center">
+  <img alt="license" src="https://img.shields.io/github/license/overflow65537/MAA_Punish">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
+  <img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blueviolet">
+  <img alt="commit" src="https://img.shields.io/github/commit-activity/m/overflow65537/MAA_Punish">
+  <img alt="mirrorchyan_rid" src="https://img.shields.io/badge/mirrorchyan_rid-MAA__Punish-orange">
+</p>
 
-> **MaaFramework** 是基于图像识别技术、运用 [MAA](https://github.com/MaaAssistantArknights/MaaAssistantArknights) 开发经验去芜存菁、完全重写的新一代自动化黑盒测试框架。
-> 低代码的同时仍拥有高扩展性，旨在打造一款丰富、领先、且实用的开源库，助力开发者轻松编写出更好的黑盒测试程序，并推广普及。
+## 主要功能
 
-## 即刻开始
+- 启动/关闭游戏
+- 指挥局抽签
+- 宿舍委托
+- 宿舍任务
+- 指挥局签到
+- 拟真围剿
+- 刷A级碎片
+- 纷争战区自动首通
+- 诺曼矿区自动首通
+- 幻痛囚笼自动首通
+- 维系者行动
+- 领取邮件
+- 商店自动购买逆元碎片
+- 领取体力
+- 自动刷拟战场域
+- 领取凭证和任务奖励
+- 自动肉鸽-宣叙妄响
+- 自动肉鸽-厄愿潮声
+- 自动肉鸽-矩阵循生
+- 自动肉鸽-寒境曙光
+- 自动肉鸽-神寂启示录
 
-- [📄 快速开始](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md)
-- [🎞️ 视频教程](https://www.bilibili.com/video/BV1yr421E7MW)
+## 注意事项
 
-## 如何开发
+- 打开无法运行首先尝试安装运行库 <https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170>
+- 如有其他问题可以提交issue或者加群反馈 **965061066**，反馈问题请附上日志文件 `debug/maa.log`，谢谢！
 
-0. 使用右上角 `Use this template` - `Create a new repository` 来基于本模板创建您自己的项目。
+## 使用说明
 
-1. 克隆本项目及子项目（地址请修改为您基于本模板创建的新项目地址）。
+下载地址：[https://github.com/overflow65537/MAA_Punish/releases](https://github.com/overflow65537/MAA_Punish/releases)
+
+### Windows
+
+- 对于绝大部分用户，请下载 `MPA-win-x86_64-vXXX.zip`
+- 若确定自己的电脑是 arm 架构，请下载 `MPA-win-aarch64-vXXX.zip`
+- 解压后运行 `MaaPiCli.exe`（命令行）或者`MFW.exe`（图形化界面） 即可
+
+### macOS
+
+- 若您的 Mac 采用 Intel 处理器，请下载 `MPA-macos-x86_64-vXXX.tar.gz`
+- 若您的 Mac 采用 M1、M2 等 ARM 处理器，请下载 `MPA-macos-aarch64-vXXX.tar.gz`
+- 使用方法如下：
+  1. 打开终端，解压下载的压缩包，您有以下三种解压方式可供选择：
+
+      **选项 1：解压到系统目录（需管理员权限）**
+      此方式将把程序解压到系统目录，需要输入管理员密码获取权限。
+
+      ```zsh
+      sudo mkdir -p /usr/local/bin/MPA
+      sudo tar -xzf <下载的MPA压缩包路径> -C /usr/local/bin/MPA
+      ```
+
+      **选项 2：解压到用户目录（推荐）**
+      该方式无需管理员权限，操作简便且便于管理个人文件。
+
+      ```zsh
+      mkdir -p ~/MPA
+      tar -xzf <下载的MPA压缩包路径> -C ~/MPA
+      ```
+
+      **选项 3：直接解压到下载目录（不推荐）**
+      这种方式操作快捷，但可能会导致 `Downloads` 文件夹文件杂乱。您只需双击下载的 MPA 压缩包，即可在同级目录自动解压。
+
+  2. 进入解压目录并运行程序：
+      - 根据上一步选择的解压方式操作：
+          - 若选择选项 1 ，在终端中执行以下命令打开程序目录：
+
+          ```zsh
+          open /usr/local/bin/MPA
+          ```
+
+          - 若选择选项 2，在终端中执行以下命令打开程序目录：
+
+          ```zsh
+          open ~/MPA
+          ```
+
+          - 若选择选项 3，直接双击解压后的文件夹进入。
+      - 找到 `MFW` 程序并双击运行。
+
+  ⚠️Gatekeeper 安全提示处理：
+  在 macOS 10.15 (Catalina) 及更高版本中，Gatekeeper 可能会阻止运行未签名的应用程序。若遇到“无法打开，因为无法验证开发者”,或者“已损坏”等错误，请使用以下命令移除隔离属性：
+
+  ```zsh
+  sudo xattr -rd com.apple.quarantine /usr/local/bin/MPA/*
+  # 若选择选项 2，解压到用户目录，使用以下命令：xattr -rd com.apple.quarantine ~/MPA/*
+  # 若选择选项 3，直接解压到下载目录，使用以下命令：xattr -rd com.apple.quarantine <下载目录>/MPA/*
+
+
+### Linux
+
+~~用 Linux 的大佬应该不需要我教~~
+
+## 开发相关
+
+目前支持的战斗逻辑
+
+- [深红囚影](assets/custom/action/exclusives/CrimsonWeave.py)
+- [深谣](assets/custom/action/exclusives/LostLullaby.py)
+- [终焉](assets/custom/action/exclusives/Oblivion.py)
+- [誓焰](assets/custom/action/exclusives/Pyroath.py)
+- [启明](assets/custom/action/exclusives/Shukra.py)
+- [深痕](assets/custom/action/exclusives/Stigmata.py)
+- [超刻](assets/custom/action/exclusives/Hyperreal.py)
+- [晖暮](assets/custom/action/exclusives/Hyperreal.py)
+
+其余部分人物由于开发者精力有限,无法同时添加,如果希望自行添加，具体参考[如何编写战斗逻辑](docs/自动战斗框架开发指南.md)，开发途中有问题可以进群反馈 **965061066**
+
+### 开发文档
+
+- [MaaFramework 快速开始](https://github.com/MaaAssistantArknights/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md)
+- [如何编写战斗逻辑](docs/自动战斗框架开发指南.md)
+
+### How to build
+
+**如果你要编译源码才看这节，否则直接 [下载](https://github.com/overflow65537/MAA_Punish/releases) 即可**
+
+0. 完整克隆本项目及子项目
 
     ```bash
-    git clone https://github.com/MaaXYZ/MaaPracticeBoilerplate.git
+    git clone --recursive https://github.com/overflow65537/MAA_Punish.git
     ```
 
-2. 下载 MaaFramework 的 [Release 包](https://github.com/MaaXYZ/MaaFramework/releases)，解压到 `deps` 文件夹中。
+1. 下载 MaaFramework 的 [Release 包](https://github.com/MaaXYZ/MaaFramework/releases)，解压到 `deps` 文件夹中
+2. 安装
 
-3. 下载通用资源子模块（MaaCommonAssets）
-
-    ```bash
-    git submodule update --init --recursive
+    ```python
+    python ./install.py
     ```
 
-    请注意，子模块仓库体积较大，请确认您已经成功下载，否则后续 OCR（文字识别）将报错并无识别结果。  
-    若 git 命令始终无法成功下载，也可尝试前往 [Mirror酱](https://mirrorchyan.com/zh/projects?rid=MaaCommonAssets&source=ghtempl-readme) 手动下载后解压到 `assets/MaaCommonAssets` 文件夹中，目录结构为 `assets/MaaCommonAssets/OCR`。
-
-4. 配置资源文件。
-
-    ```bash
-    python ./configure.py
-    ```
-
-    若报错 `File Not Found: XXXXXX`，则说明上一步 MaaCommonAssets 未正常下载，请再次检查！
-
-5. 进行开发工作，按您的业务需求修改 `assets` 中的资源文件，请参考 [MaaFramework 相关文档](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md#%E8%B5%84%E6%BA%90%E5%87%86%E5%A4%87)。
-
-6. 完成开发后，上传您的代码并发布版本。
-
-    ```bash
-    # 配置 git 信息（仅第一次需要，后续不用再配置）
-    git config user.name "您的 GitHub 昵称"
-    git config user.email "您的 GitHub 邮箱"
-    
-    # 提交修改
-    git add .
-    git commit -m "XX 新功能"
-    git push origin HEAD -u
-    ```
-
-7. 发布您的版本
-
-    需要**先**修改仓库设置 `Settings` - `Actions` - `General` - `Read and write permissions` - `Save`
-
-    ```bash
-    # CI 检测到 tag 会自动进行发版
-    git tag v1.0.0
-    git push origin v1.0.0
-    ```
-
-8. 更多操作，请参考 [个性化配置](./docs/zh_cn/个性化配置.md)（可选）
-
-## 生态共建
-
-MAA 正计划建设为一类项目，而非舟的单一软件。
-
-若您的项目依赖于 MaaFramework，我们欢迎您将它命名为 MaaXXX, MXA, MAX 等等。当然，这是许可而不是限制，您也可以自由选择其他与 MAA 无关的名字，完全取决于您自己的想法！
-
-同时，我们也非常欢迎您提出 PR，在 [社区项目列表](https://github.com/MaaXYZ/MaaFramework#%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE) 中添加上您的项目！
-
-## FAQ
-
-### 0. 我是第一次使用 git，这是什么？视频演示中那个黑框框命令行哪来的？
-
-黑框框是 git bash，几乎任何现代软件的开发都离不开 git，建议先参考 [菜鸟教程](https://www.runoob.com/git/git-install-setup.html) 或搜索一些视频，学习完 git 后再来进行后续开发工作。
-
-### 1. 我是第一次使用 Python，在命令行输入 `python ./configure.py` 或 `python -m pip install MaaFW` 之后没有反应？没有报错，也没有提示成功，什么都没有
-
-Win10 或者 Win11 系统自带了一份 "Python"，但它其实只是一个安装器，是没法用的。  
-你需要做的是关闭它或者删除它的环境变量，然后自己去 Python 官网下载并安装一份 Python。  
-[参考方法](https://www.bilibili.com/read/cv24692025/)
-
-### 2. 使用 MaaDebugger 或 MaaPicli 时弹窗报错，应用程序错误：应用程序无法正常启动
-
-![缺少运行库](https://github.com/user-attachments/assets/942df84b-f47d-4bb5-98b5-ab5d44bc7c2a)
-
-一般是电脑缺少某些运行库，请安装一下 [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe) 。
-
-### 3. 我在这个仓库里提了 Issue 很久没人回复
-
-这里是《项目模板》仓库，它仅仅是一个模板，一般很少会修改，开发者也较少关注。  
-在此仓库请仅提问模板相关问题，其他问题最好前往对应的仓库提出，如果有 log，最好也带上它（`debug/maa.log` 文件）
-
-- MaaFW 本身及 MaaPiCli 的问题：[MaaFramework/issues](https://github.com/MaaXYZ/MaaFramework/issues)
-- MaaDebugger 的问题：[MaaDebugger/issues](https://github.com/MaaXYZ/MaaDebugger/issues)
-- 不知道算是哪里的、其他疑问等：[讨论区](https://github.com/MaaXYZ/MaaFramework/discussions)
-
-### 4. OCR 文字识别一直没有识别结果，报错 "Failed to load det or rec", "ocrer_ is null"
-
-**请仔细阅读文档**，你无视了前面步骤的报错。我不想解释了，请再把本文档仔细阅读一遍！
+生成的二进制及相关资源文件在 `install` 目录下
 
 ## 鸣谢
 
-本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
+### 开源库
 
-感谢以下开发者对本项目作出的贡献（下面链接改成你自己的项目地址）:
+- [MaaFramework](https://github.com/MaaXYZ/MaaFramework)
+  
+  基于图像识别的自动化黑盒测试框架 | An automation black-box testing framework based on image recognition
 
-[![Contributors](https://contrib.rocks/image?repo=MaaXYZ/MaaFramework&max=1000)](https://github.com/MaaXYZ/MaaFramework/graphs/contributors)
+- [MFW-PyQt6](https://github.com/overflow65537/MFW-PyQt6)
+  基于 PyQt6 的 MaaFramework 前端 | A frontend based on PyQt6 for MaaFramework
+
+### 开发者
+
+感谢以下开发者对 MAA_Punish 作出的贡献：
+
+<a href="https://github.com/overflow65537/MAA_Punish/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=overflow65537/MAA_Punish&max=1000" alt="Contributors to MAA_Punish"/>
+</a>

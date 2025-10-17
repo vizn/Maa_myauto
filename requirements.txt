@@ -1,2 +1,2 @@
-MaaDebugger
-MaaFw
+numpy == 2.2.6
+maafw >=4.4.0
