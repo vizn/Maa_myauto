@@ -1,5 +1,26 @@
 {
+    "__mpe_config_clearJob.json": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "clearJob.json",
+            "version": "v0.5.3"
+        }
+    },
     "zhengli_baibao": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 952
+            }
+        },
         "next": [
             "打开背包成功"
         ],
@@ -8,7 +29,6 @@
         ]
     },
     "zhengli_baibao_panduan": {
-        "inverse": true,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -22,7 +42,7 @@
             }
         },
         "action": {
-            "type": "Key",
+            "type": "ClickKey",
             "param": {
                 "key": [
                     57,
@@ -30,7 +50,14 @@
                 ]
             }
         },
-        "post_delay": 1000
+        "inverse": true,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 944
+            }
+        }
     },
     "打开背包成功": {
         "recognition": {
@@ -45,11 +72,25 @@
                 ]
             }
         },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 725
+            }
+        },
         "next": [
             "背包向上滑动到顶端"
         ]
     },
     "背包向上滑动到顶端": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
         "action": {
             "type": "MultiSwipe",
             "param": {
@@ -106,6 +147,12 @@
             }
         },
         "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 725
+            }
+        },
         "next": [
             "点击整理"
         ]
@@ -125,7 +172,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 725
+            }
+        },
         "next": [
             "整理完成",
             "主界面"
@@ -141,6 +197,10 @@
         ]
     },
     "计数器-背包滑动次数10": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
         "action": {
             "type": "Custom",
             "param": {
@@ -151,46 +211,92 @@
                     "LoopNode": "背包向上滑动1"
                 }
             }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 1703
+            }
         }
     },
     "整理10次": {
-        "next": []
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 1616
+            }
+        }
     },
     "使用红罗羹": {
-        "post_delay": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": "beibao/hongluogeng.png"
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 0
+            }
+        },
         "next": [
             "点击更多"
         ]
     },
     "使用绿芦羹": {
-        "post_delay": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": "beibao/lvlugeng.png"
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 314
+            }
+        },
         "next": [
             "点击更多"
         ]
     },
     "使用心魔宝珠": {
-        "post_delay": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": "beibao/xinmobaozhu.png"
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 541
+            }
+        },
         "next": [
             "点击批量使用_心魔宝珠"
         ]
@@ -210,7 +316,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 72
+            }
+        },
         "next": [
             "点击批量使用"
         ]
@@ -230,7 +345,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1740,
+                "y": 72
+            }
+        },
         "next": [
             "使用"
         ]
@@ -250,8 +374,17 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
-        "post_delay": 500
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 2030,
+                "y": 57
+            }
+        }
     },
     "点击批量使用_心魔宝珠": {
         "recognition": {
@@ -268,10 +401,23 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
-        "post_delay": 500
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 526
+            }
+        }
     },
     "背包向上滑动1": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
         "action": {
             "type": "Swipe",
             "param": {
@@ -282,36 +428,62 @@
                     1
                 ],
                 "end": [
-                    907,
-                    363,
-                    1,
-                    1
+                    [
+                        907,
+                        363,
+                        1,
+                        1
+                    ]
                 ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 1775
             }
         }
     },
     "出售百炼精铁": {
-        "post_delay": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": "beibao/bailianjingtie.png"
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 1178
+            }
+        },
         "next": [
             "点击商会出售"
         ]
     },
     "出售阵法": {
-        "post_delay": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
                 "template": "beibao/zhenfa.png"
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 1397
+            }
+        },
         "next": [
             "点击商会出售"
         ]
@@ -331,7 +503,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 1390
+            }
+        },
         "next": [
             "点击商会出售——满"
         ]
@@ -351,7 +532,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 1390
+            }
+        },
         "next": [
             "点击商会出售——满——出售"
         ]
@@ -371,11 +561,19 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
-        "post_delay": 1000
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 1375
+            }
+        }
     },
     "合成阵法": {
-        "post_delay": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -389,7 +587,17 @@
                 "threshold": 0.98
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 760
+            }
+        },
         "next": [
             "点击阵法使用"
         ]
@@ -402,6 +610,16 @@
                     "5"
                 ],
                 "roi": "合成阵法"
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 1039
             }
         },
         "next": [
@@ -423,8 +641,17 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
-        "post_delay": 500
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 839
+            }
+        }
     },
     "使用过期物品": {
         "recognition": {
@@ -439,7 +666,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 1265
+            }
+        },
         "next": [
             "使用过期物品-使用"
         ]
@@ -459,7 +695,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" }
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 1265
+            }
+        }
     },
     "使用秘境材料": {
         "recognition": {
@@ -493,7 +738,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 1484
+            }
+        },
         "next": [
             "秘境材料-收入"
         ]
@@ -513,7 +767,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" }
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 1484
+            }
+        }
     },
     "点击整理-interrupt一轮": {
         "recognition": {
@@ -530,7 +793,16 @@
                 ]
             }
         },
-        "action": { "type": "Click" }
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 1994
+            }
+        }
     },
     "整理完成": {
         "recognition": {
@@ -546,11 +818,37 @@
                     187,
                     94
                 ],
-                "threshold": 0.80
+                "threshold": 0.8
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 1922
             }
         },
         "next": [
-            "panduan_zhujiemian"
+            "进入-主界面"
         ]
+    },
+    "__mpe_external_主界面_clearJob.json": {
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 219
+            }
+        }
+    },
+    "__mpe_external_进入-主界面_clearJob.json": {
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 1999
+            }
+        }
     }
 }

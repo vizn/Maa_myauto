@@ -1,17 +1,36 @@
 {
+    "__mpe_config_scoopTask": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "scoopTask",
+            "version": "v0.5.3"
+        }
+    },
     "wabaotu_qingli": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
         "pre_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 971
+            }
+        },
         "next": [
             "清理主界面使用-关闭完成"
         ],
         "interrupt": [
             "清理主界面使用-关闭",
-            "panduan_zhujiemian"
+            "进入-主界面"
         ]
     },
     "清理主界面使用-关闭完成": {
-        "inverse": true,
-        "pre_delay": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -22,6 +41,18 @@
                     50,
                     46
                 ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "inverse": true,
+        "pre_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 647
             }
         },
         "next": [
@@ -29,7 +60,6 @@
         ]
     },
     "清理主界面使用-关闭": {
-        "pre_delay": 200,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -43,14 +73,25 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {}
         },
-        "post_delay": 200
+        "pre_delay": 200,
+        "post_delay": 200,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 926
+            }
+        }
     },
     "wabaotu": {
-        "pre_wait_freezes": 1,
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
         "action": {
-            "type": "Key",
+            "type": "ClickKey",
             "param": {
                 "key": [
                     57,
@@ -58,7 +99,14 @@
                 ]
             }
         },
+        "pre_wait_freezes": 1,
         "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 662
+            }
+        },
         "next": [
             "wabaotu_dakaibeibao_chenggong"
         ],
@@ -79,12 +127,21 @@
                 ]
             }
         },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 413
+            }
+        },
         "next": [
             "挖宝图-打开背包-向上滑动到顶端"
         ]
     },
     "wabaotu_dakaibeibao_shibai": {
-        "inverse": true,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -98,7 +155,7 @@
             }
         },
         "action": {
-            "type": "Key",
+            "type": "ClickKey",
             "param": {
                 "key": [
                     57,
@@ -106,10 +163,20 @@
                 ]
             }
         },
-        "post_delay": 1000
+        "inverse": true,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 764
+            }
+        }
     },
     "挖宝图-打开背包-向上滑动到顶端": {
-        "pre_delay": 1000,
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
         "action": {
             "type": "MultiSwipe",
             "param": {
@@ -162,12 +229,19 @@
                 ]
             }
         },
+        "pre_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 413
+            }
+        },
         "next": [
             "点击藏宝图",
             "整理完成"
         ],
         "interrupt": [
-            "背包向上滑动1"
+            "背包向上滑动"
         ]
     },
     "点击藏宝图": {
@@ -184,7 +258,14 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 277
+            }
         },
         "next": [
             "藏宝图-背包使用"
@@ -206,7 +287,14 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1740,
+                "y": 181
+            }
         },
         "next": [
             "藏宝图-主界面使用"
@@ -219,7 +307,6 @@
         ]
     },
     "藏宝图-主界面使用": {
-        "is_sub": true,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -235,14 +322,24 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {}
         },
-        "post_wait_freezes": 5000
+        "post_wait_freezes": 5000,
+        "__mpe_code": {
+            "position": {
+                "x": 2030,
+                "y": 0
+            }
+        }
     },
     "挖宝图完成判断": {
-        "pre_wait_freezes": 100,
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
         "action": {
-            "type": "Key",
+            "type": "ClickKey",
             "param": {
                 "key": [
                     57,
@@ -250,7 +347,14 @@
                 ]
             }
         },
+        "pre_wait_freezes": 100,
         "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2030,
+                "y": 374
+            }
+        },
         "next": [
             "挖宝图完成判断-打开背包成功"
         ],
@@ -271,16 +375,25 @@
                 ]
             }
         },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2320,
+                "y": 456
+            }
+        },
         "next": [
             "点击藏宝图",
             "挖宝图完成"
         ],
         "interrupt": [
-            "背包向上滑动1"
+            "背包向上滑动"
         ]
     },
     "挖宝图完成判断-打开背包失败": {
-        "inverse": true,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -294,7 +407,7 @@
             }
         },
         "action": {
-            "type": "Key",
+            "type": "ClickKey",
             "param": {
                 "key": [
                     57,
@@ -302,7 +415,14 @@
                 ]
             }
         },
-        "post_delay": 1000
+        "inverse": true,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 2320,
+                "y": 675
+            }
+        }
     },
     "挖宝图完成": {
         "recognition": {
@@ -321,9 +441,51 @@
                 "threshold": 0.8
             }
         },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
         "post_delay": 2000,
+        "__mpe_code": {
+            "position": {
+                "x": 2612,
+                "y": 381
+            }
+        },
         "next": [
-            "panduan_zhujiemian"
+            "进入-主界面"
         ]
+    },
+    "__mpe_external_进入-主界面_scoopTask": {
+        "__mpe_code": {
+            "position": {
+                "x": 2900,
+                "y": 943
+            }
+        }
+    },
+    "__mpe_external_整理完成_scoopTask": {
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 607
+            }
+        }
+    },
+    "__mpe_external_背包向上滑动_scoopTask": {
+        "__mpe_code": {
+            "position": {
+                "x": 2610,
+                "y": 928
+            }
+        }
+    },
+    "__mpe_external_战斗中-等待100秒_scoopTask": {
+        "__mpe_code": {
+            "position": {
+                "x": 2030,
+                "y": 279
+            }
+        }
     }
 }

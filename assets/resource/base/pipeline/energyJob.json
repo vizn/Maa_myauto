@@ -1,10 +1,31 @@
 {
+    "__mpe_config_energyJob.json": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "energyJob.json",
+            "version": "v0.5.3"
+        }
+    },
     "huoli": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 125
+            }
+        },
         "next": [
             "打开人物界面-过渡"
         ],
         "interrupt": [
-            "panduan_zhujiemian"
+            "进入-主界面"
         ]
     },
     "打开人物界面-过渡": {
@@ -23,9 +44,8 @@
                 ]
             }
         },
-        "pre_delay": 1000,
         "action": {
-            "type": "Key",
+            "type": "ClickKey",
             "param": {
                 "key": [
                     57,
@@ -33,7 +53,14 @@
                 ]
             }
         },
+        "pre_delay": 1000,
         "post_delay": 2000,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 132
+            }
+        },
         "next": [
             "打开人物界面-成功"
         ],
@@ -42,7 +69,6 @@
         ]
     },
     "打开人物界面-失败": {
-        "inverse": true,
         "recognition": {
             "type": "OCR",
             "param": {
@@ -57,14 +83,21 @@
                 ]
             }
         },
-        "pre_delay": 1000,
         "action": {
-            "type": "Key",
+            "type": "ClickKey",
             "param": {
                 "key": [
                     57,
                     51
                 ]
+            }
+        },
+        "inverse": true,
+        "pre_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 0
             }
         }
     },
@@ -81,6 +114,16 @@
                     175,
                     60
                 ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 309
             }
         },
         "next": [
@@ -102,9 +145,16 @@
                 ]
             }
         },
-        "pre_delay": 500,
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 294
+            }
         },
         "next": [
             "点击打工-agnet"
@@ -117,8 +167,18 @@
                 "custom_recognition": "OCRVitality"
             }
         },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 324
+            }
+        },
         "next": [
-            "panduan_zhujiemian"
+            "进入-主界面"
         ]
     },
     "点击打工": {
@@ -137,7 +197,22 @@
             }
         },
         "action": {
-            "type": "Click"
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 284
+            }
+        }
+    },
+    "__mpe_external_进入-主界面_energyJob.json": {
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 157
+            }
         }
     }
 }
