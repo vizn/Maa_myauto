@@ -1,0 +1,144 @@
+{
+    "bangpai_qiandao": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/jiahao.png",
+                "roi": [
+                    1214,
+                    644,
+                    54,
+                    52
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "baipai"
+        ]
+    },
+    "baipai": {
+        "pre_wait_freezes": 1,
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    30
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "bangpaifuli"
+        ],
+        "interrupt": [
+            "baipai_panduan"
+        ]
+    },
+    "baipai_panduan": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/bangpai_jiemian_panduan.png",
+                "roi": [
+                    459,
+                    0,
+                    326,
+                    80
+                ]
+            }
+        },
+        "pre_wait_freezes": 1,
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    30
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "bangpaifuli": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/bangpaifuli.png",
+                "roi": [
+                    1115,
+                    409,
+                    73,
+                    106
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "BangPaiFuLiQianDao"
+        ]
+    },
+    "BangPaiFuLiQianDao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "签到"
+                ],
+                "roi": [
+                    882,
+                    461,
+                    195,
+                    63
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "BangPaiFuLiFenHong",
+            "panduan_zhujiemian"
+        ]
+    },
+    "BangPaiFuLiFenHong": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "领取分红"
+                ],
+                "roi": [
+                    880,
+                    609,
+                    189,
+                    61
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "BangPaiFuLiFenHongLingQu"
+        ]
+    },
+    "BangPaiFuLiFenHongLingQu": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "领取"
+                ],
+                "roi": [
+                    517,
+                    544,
+                    237,
+                    64
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "panduan_zhujiemian"
+        ]
+    }
+}
