@@ -1,0 +1,301 @@
+{
+    "fuli_qiandao": {
+        "next": [
+            "fuli_qiandao-ocr"
+        ],
+        "interrupt": [
+            "panduan_zhujiemian"
+        ]
+    },
+    "fuli_qiandao-ocr": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "福利"
+                ],
+                "roi": [
+                    1,
+                    112,
+                    72,
+                    65
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "dakaiguaguale"
+        ]
+    },
+    "dakaiguaguale": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "打开刮刮乐"
+                ],
+                "roi": [
+                    877,
+                    590,
+                    229,
+                    79
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "qiandaohuadong"
+        ]
+    },
+    "qiandaohuadong": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    633,
+                    365,
+                    1,
+                    1
+                ],
+                "end": [
+                    1048,
+                    364,
+                    1,
+                    1
+                ],
+                "duration": 500
+            }
+        },
+        "next": [
+            "qiandaohuadong2"
+        ]
+    },
+    "qiandaohuadong2": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    615,
+                    383,
+                    1,
+                    1
+                ],
+                "end": [
+                    1051,
+                    383,
+                    1,
+                    1
+                ],
+                "duration": 500
+            }
+        },
+        "next": [
+            "qiandaohuadong3"
+        ]
+    },
+    "qiandaohuadong3": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    629,
+                    418,
+                    1,
+                    1
+                ],
+                "end": [
+                    1053,
+                    418,
+                    1,
+                    1
+                ],
+                "duration": 500
+            }
+        },
+        "next": [
+            "qiandaohuadong4"
+        ]
+    },
+    "qiandaohuadong4": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    606,
+                    399,
+                    1,
+                    1
+                ],
+                "end": [
+                    1069,
+                    401,
+                    1,
+                    1
+                ],
+                "duration": 500
+            }
+        },
+        "next": [
+            "qiandaohuadong5"
+        ]
+    },
+    "qiandaohuadong5": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    617,
+                    449,
+                    1,
+                    1
+                ],
+                "end": [
+                    1056,
+                    450,
+                    1,
+                    1
+                ],
+                "duration": 500
+            }
+        },
+        "next": [
+            "qiandaohuadong6"
+        ]
+    },
+    "qiandaohuadong6": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    597,
+                    462,
+                    1,
+                    1
+                ],
+                "end": [
+                    1048,
+                    472,
+                    1,
+                    1
+                ],
+                "duration": 500
+            }
+        },
+        "next": [
+            "click_fuli_leiji1"
+        ]
+    },
+    "click_fuli_leiji1": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/leiji2.png",
+                "roi": [
+                    789,
+                    638,
+                    98,
+                    44
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "click_fuli_leiji1_lingqu"
+        ]
+    },
+    "click_fuli_leiji1_lingqu": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    800,
+                    564,
+                    78,
+                    77
+                ]
+            }
+        },
+        "next": [
+            "click_fuli_leiji2"
+        ]
+    },
+    "click_fuli_leiji2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/leiji5.png",
+                "roi": [
+                    903,
+                    639,
+                    99,
+                    41
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "click_fuli_leiji2_lingqu"
+        ]
+    },
+    "click_fuli_leiji2_lingqu": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    915,
+                    564,
+                    76,
+                    72
+                ]
+            }
+        },
+        "next": [
+            "click_fuli_leiji3"
+        ]
+    },
+    "click_fuli_leiji3": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/leiji7.png",
+                "roi": [
+                    1019,
+                    639,
+                    101,
+                    41
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "click_fuli_leiji3_lingqu"
+        ]
+    },
+    "click_fuli_leiji3_lingqu": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1031,
+                    561,
+                    76,
+                    77
+                ]
+            }
+        },
+        "next": [
+            "panduan_zhujiemian"
+        ]
+    },
+    "dakaibeibao": {
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": [
+                    57,
+                    33
+                ]
+            }
+        }
+    }
+}
