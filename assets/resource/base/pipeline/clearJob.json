@@ -1,0 +1,556 @@
+{
+    "zhengli_baibao": {
+        "next": [
+            "打开背包成功"
+        ],
+        "interrupt": [
+            "zhengli_baibao_panduan"
+        ]
+    },
+    "zhengli_baibao_panduan": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/beibao_jiemian_panduan.png",
+                "roi": [
+                    335,
+                    5,
+                    577,
+                    68
+                ]
+            }
+        },
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": [
+                    57,
+                    33
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "打开背包成功": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/beibao_jiemian_panduan.png",
+                "roi": [
+                    335,
+                    5,
+                    577,
+                    68
+                ]
+            }
+        },
+        "next": [
+            "背包向上滑动到顶端"
+        ]
+    },
+    "背包向上滑动到顶端": {
+        "action": {
+            "type": "MultiSwipe",
+            "param": {
+                "swipes": [
+                    {
+                        "starting": 0,
+                        "begin": [
+                            907,
+                            220,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            908,
+                            447,
+                            1,
+                            1
+                        ],
+                        "duration": 200
+                    },
+                    {
+                        "starting": 1000,
+                        "begin": [
+                            907,
+                            220,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            908,
+                            447,
+                            1,
+                            1
+                        ],
+                        "duration": 200
+                    },
+                    {
+                        "starting": 2000,
+                        "begin": [
+                            907,
+                            220,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            908,
+                            447,
+                            1,
+                            1
+                        ],
+                        "duration": 200
+                    }
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "点击整理"
+        ]
+    },
+    "点击整理": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "整理"
+                ],
+                "roi": [
+                    873,
+                    609,
+                    241,
+                    77
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "整理完成",
+            "主界面"
+        ],
+        "interrupt": [
+            "使用红罗羹",
+            "使用绿芦羹",
+            "使用心魔宝珠",
+            "合成阵法",
+            "使用秘境材料",
+            "使用过期物品",
+            "计数器-背包滑动次数10"
+        ]
+    },
+    "计数器-背包滑动次数10": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "countGlobal",
+                "custom_action_param": {
+                    "target_count": 10,
+                    "nextTask": "panduan_zhujiemian",
+                    "LoopNode": "背包向上滑动1"
+                }
+            }
+        }
+    },
+    "整理10次": {
+        "next": []
+    },
+    "使用红罗羹": {
+        "post_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/hongluogeng.png"
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "点击更多"
+        ]
+    },
+    "使用绿芦羹": {
+        "post_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/lvlugeng.png"
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "点击更多"
+        ]
+    },
+    "使用心魔宝珠": {
+        "post_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/xinmobaozhu.png"
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "点击批量使用_心魔宝珠"
+        ]
+    },
+    "点击更多": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "更多"
+                ],
+                "roi": [
+                    242,
+                    426,
+                    173,
+                    74
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "点击批量使用"
+        ]
+    },
+    "点击批量使用": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "批量使用"
+                ],
+                "roi": [
+                    258,
+                    381,
+                    133,
+                    37
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "使用"
+        ]
+    },
+    "使用": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "使用"
+                ],
+                "roi": [
+                    533,
+                    455,
+                    213,
+                    73
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "post_delay": 500
+    },
+    "点击批量使用_心魔宝珠": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "批量使用"
+                ],
+                "roi": [
+                    423,
+                    429,
+                    169,
+                    80
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "post_delay": 500
+    },
+    "背包向上滑动1": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    907,
+                    462,
+                    1,
+                    1
+                ],
+                "end": [
+                    907,
+                    363,
+                    1,
+                    1
+                ]
+            }
+        }
+    },
+    "出售百炼精铁": {
+        "post_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/bailianjingtie.png"
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "点击商会出售"
+        ]
+    },
+    "出售阵法": {
+        "post_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/zhenfa.png"
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "点击商会出售"
+        ]
+    },
+    "点击商会出售": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "商会出售"
+                ],
+                "roi": [
+                    246,
+                    410,
+                    171,
+                    79
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "点击商会出售——满"
+        ]
+    },
+    "点击商会出售——满": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "满"
+                ],
+                "roi": [
+                    740,
+                    364,
+                    75,
+                    68
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "点击商会出售——满——出售"
+        ]
+    },
+    "点击商会出售——满——出售": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "出售"
+                ],
+                "roi": [
+                    524,
+                    529,
+                    234,
+                    68
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "post_delay": 1000
+    },
+    "合成阵法": {
+        "post_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/zhenfajuan.png",
+                "roi": [
+                    618,
+                    140,
+                    479,
+                    479
+                ],
+                "threshold": 0.98
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "点击阵法使用"
+        ]
+    },
+    "阵法卷数量5": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "5"
+                ],
+                "roi": "合成阵法"
+            }
+        },
+        "next": [
+            "点击阵法使用"
+        ]
+    },
+    "点击阵法使用": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "使用"
+                ],
+                "roi": [
+                    424,
+                    419,
+                    161,
+                    62
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "post_delay": 500
+    },
+    "使用过期物品": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/guoqi.png",
+                "roi": [
+                    618,
+                    140,
+                    479,
+                    479
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "使用过期物品-使用"
+        ]
+    },
+    "使用过期物品-使用": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "使用"
+                ],
+                "roi": [
+                    387,
+                    354,
+                    210,
+                    278
+                ]
+            }
+        },
+        "action": { "type": "Click" }
+    },
+    "使用秘境材料": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "mijing_cailiao/bulaogen.png",
+                    "mijing_cailiao/chilongjiao.png",
+                    "mijing_cailiao/danzhusha.png",
+                    "mijing_cailiao/donghuangjiuge.png",
+                    "mijing_cailiao/dushengyupo.png",
+                    "mijing_cailiao/jiangmulingzhong.png",
+                    "mijing_cailiao/jiaorenzhu.png",
+                    "mijing_cailiao/jinwuzhi.png",
+                    "mijing_cailiao/nanshanyu.png",
+                    "mijing_cailiao/qimingzhiyao.png",
+                    "mijing_cailiao/wangchuanshi.png",
+                    "mijing_cailiao/wutongshenmu.png",
+                    "mijing_cailiao/xiaochunlan.png",
+                    "mijing_cailiao/xitianqueling.png",
+                    "mijing_cailiao/xuannvlei.png",
+                    "mijing_cailiao/yinyangcao.png",
+                    "mijing_cailiao/yueguilu.png",
+                    "mijing_cailiao/zhurongguo.png"
+                ],
+                "roi": [
+                    618,
+                    140,
+                    479,
+                    479
+                ]
+            }
+        },
+        "action": { "type": "Click" },
+        "next": [
+            "秘境材料-收入"
+        ]
+    },
+    "秘境材料-收入": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "收入"
+                ],
+                "roi": [
+                    437,
+                    427,
+                    134,
+                    48
+                ]
+            }
+        },
+        "action": { "type": "Click" }
+    },
+    "点击整理-interrupt一轮": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "整理"
+                ],
+                "roi": [
+                    873,
+                    609,
+                    241,
+                    77
+                ]
+            }
+        },
+        "action": { "type": "Click" }
+    },
+    "整理完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "beibao/beibao_konggezi.png",
+                    "beibao/beibao_diduan.png"
+                ],
+                "roi": [
+                    905,
+                    543,
+                    187,
+                    94
+                ],
+                "threshold": 0.80
+            }
+        },
+        "next": [
+            "panduan_zhujiemian"
+        ]
+    }
+}
