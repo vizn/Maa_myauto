@@ -1,0 +1,329 @@
+{
+    "wabaotu_qingli": {
+        "pre_delay": 200,
+        "next": [
+            "清理主界面使用-关闭完成"
+        ],
+        "interrupt": [
+            "清理主界面使用-关闭",
+            "panduan_zhujiemian"
+        ]
+    },
+    "清理主界面使用-关闭完成": {
+        "inverse": true,
+        "pre_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/zhujiemian_shiyong_cha.png",
+                "roi": [
+                    1135,
+                    369,
+                    50,
+                    46
+                ]
+            }
+        },
+        "next": [
+            "wabaotu"
+        ]
+    },
+    "清理主界面使用-关闭": {
+        "pre_delay": 200,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/zhujiemian_shiyong_cha.png",
+                "roi": [
+                    1135,
+                    369,
+                    50,
+                    46
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 200
+    },
+    "wabaotu": {
+        "pre_wait_freezes": 1,
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": [
+                    57,
+                    33
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "wabaotu_dakaibeibao_chenggong"
+        ],
+        "interrupt": [
+            "wabaotu_dakaibeibao_shibai"
+        ]
+    },
+    "wabaotu_dakaibeibao_chenggong": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/beibao_jiemian_panduan.png",
+                "roi": [
+                    335,
+                    5,
+                    577,
+                    68
+                ]
+            }
+        },
+        "next": [
+            "挖宝图-打开背包-向上滑动到顶端"
+        ]
+    },
+    "wabaotu_dakaibeibao_shibai": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/beibao_jiemian_panduan.png",
+                "roi": [
+                    335,
+                    5,
+                    577,
+                    68
+                ]
+            }
+        },
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": [
+                    57,
+                    33
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "挖宝图-打开背包-向上滑动到顶端": {
+        "pre_delay": 1000,
+        "action": {
+            "type": "MultiSwipe",
+            "param": {
+                "swipes": [
+                    {
+                        "starting": 0,
+                        "begin": [
+                            906,
+                            185,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            906,
+                            548,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "starting": 1000,
+                        "begin": [
+                            906,
+                            185,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            906,
+                            548,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "starting": 2000,
+                        "begin": [
+                            906,
+                            185,
+                            1,
+                            1
+                        ],
+                        "end": [
+                            906,
+                            548,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            }
+        },
+        "next": [
+            "点击藏宝图",
+            "整理完成"
+        ],
+        "interrupt": [
+            "背包向上滑动1"
+        ]
+    },
+    "点击藏宝图": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "baotu/cangbaotu.png",
+                "roi": [
+                    632,
+                    140,
+                    473,
+                    484
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "藏宝图-背包使用"
+        ]
+    },
+    "藏宝图-背包使用": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "使用"
+                ],
+                "roi": [
+                    425,
+                    418,
+                    159,
+                    63
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "藏宝图-主界面使用"
+        ],
+        "interrupt": [
+            "战斗中-等待100秒"
+        ],
+        "on_error": [
+            "挖宝图完成判断"
+        ]
+    },
+    "藏宝图-主界面使用": {
+        "is_sub": true,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "使用"
+                ],
+                "roi": [
+                    1013,
+                    536,
+                    157,
+                    73
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 5000
+    },
+    "挖宝图完成判断": {
+        "pre_wait_freezes": 100,
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": [
+                    57,
+                    33
+                ]
+            }
+        },
+        "post_delay": 1000,
+        "next": [
+            "挖宝图完成判断-打开背包成功"
+        ],
+        "interrupt": [
+            "挖宝图完成判断-打开背包失败"
+        ]
+    },
+    "挖宝图完成判断-打开背包成功": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/beibao_jiemian_panduan.png",
+                "roi": [
+                    335,
+                    5,
+                    577,
+                    68
+                ]
+            }
+        },
+        "next": [
+            "点击藏宝图",
+            "挖宝图完成"
+        ],
+        "interrupt": [
+            "背包向上滑动1"
+        ]
+    },
+    "挖宝图完成判断-打开背包失败": {
+        "inverse": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "beibao/beibao_jiemian_panduan.png",
+                "roi": [
+                    335,
+                    5,
+                    577,
+                    68
+                ]
+            }
+        },
+        "action": {
+            "type": "Key",
+            "param": {
+                "key": [
+                    57,
+                    33
+                ]
+            }
+        },
+        "post_delay": 1000
+    },
+    "挖宝图完成": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "beibao/beibao_konggezi.png",
+                    "beibao/beibao_diduan.png"
+                ],
+                "roi": [
+                    905,
+                    543,
+                    187,
+                    94
+                ],
+                "threshold": 0.8
+            }
+        },
+        "post_delay": 2000,
+        "next": [
+            "panduan_zhujiemian"
+        ]
+    }
+}
