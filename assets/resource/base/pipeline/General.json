@@ -9,10 +9,11 @@
     "进入-主界面": {
         "next": [
             "取消",
-            "确定",
-            "关闭",
-            "使用",
             "主界面"
+        ],
+        "interrupt": [
+            "关闭",
+            "确定"
         ]
     },
     "取消": {
@@ -25,28 +26,12 @@
         "expected": "确定",
         "action": "Click"
     },
-    "使用": {
-        "recognition": "OCR",
-        "expected": "使用",
-        "action": "Click"
-    },
     "关闭": {
-        "recognition": {
-            "type": "TemplateMatch",
-            "param": {
-                "template": [
-                    "zonghe/zhujiemian_shiyong_cha.png"
-                ],
-                "roi": [
-                    1115,
-                    82,
-                    42,
-                    36
-                ]
-            }
-        },
         "action": {
-            "type": "Click"
+            "type": "ClickKey",
+            "param": {
+                "key": 111
+            }
         }
     },
     "主界面": {
@@ -54,30 +39,16 @@
             "type": "TemplateMatch",
             "param": {
                 "template": [
-                    "zonghe/jiahao.png",
                     "zonghe/chenghao.png",
+                    "zonghe/mainpage.png",
                     "zonghe/baoguo.png",
-                    "zonghe/baoguo_man.png",
-                    "zonghe/sectClose.png"
-                ],
-                "roi": [
-                    1197,
-                    540,
-                    78,
-                    157
+                    "zonghe/baoguo_man.png"
                 ]
             }
         },
-        "action": {
-            "type": "ClickKey",
-            "param": {
-                "key": 111
-            }
-        },
-        "inverse": true,
-        "pre_delay": 1000,
-        "post_wait_freezes": 100,
-        "post_delay": 200,
+        "next": [
+            "取消"
+        ],
         "__mpe_code": {
             "position": {
                 "x": 0,

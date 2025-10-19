@@ -1,0 +1,260 @@
+{
+    "__mpe_config_factionTask.json": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "factionTask.json",
+            "version": "v0.5.3"
+        }
+    },
+    "帮派签到": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "next": [
+            "zhankai",
+            "bangpai_qiandao"
+        ],
+        "interrupt": [
+            "进入-主界面"
+        ]
+    },
+    "bangpai_qiandao": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/jiahao.png",
+                "roi": [
+                    1214,
+                    644,
+                    54,
+                    52
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 140
+            }
+        },
+        "next": [
+            "baipai"
+        ]
+    },
+    "zhankai": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "zonghe/chenghao.png",
+                "roi": [
+                    1214,
+                    644,
+                    54,
+                    52
+                ]
+            }
+        },
+        "next": [
+            "baipai"
+        ]
+    },
+    "baipai": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    30
+                ]
+            }
+        },
+        "pre_wait_freezes": 1,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 125
+            }
+        },
+        "next": [
+            "bangpaifuli"
+        ],
+        "interrupt": [
+            "baipai_panduan"
+        ]
+    },
+    "baipai_panduan": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/bangpai_jiemian_panduan.png",
+                "roi": [
+                    459,
+                    0,
+                    326,
+                    80
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    30
+                ]
+            }
+        },
+        "inverse": true,
+        "pre_wait_freezes": 1,
+        "post_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 219
+            }
+        }
+    },
+    "bangpaifuli": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/bangpaifuli.png",
+                "roi": [
+                    1115,
+                    409,
+                    73,
+                    106
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 0
+            }
+        },
+        "next": [
+            "BangPaiFuLiQianDao"
+        ]
+    },
+    "BangPaiFuLiQianDao": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "签到"
+                ],
+                "roi": [
+                    882,
+                    461,
+                    195,
+                    63
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 0
+            }
+        },
+        "next": [
+            "BangPaiFuLiFenHong",
+            "进入-主界面"
+        ]
+    },
+    "BangPaiFuLiFenHong": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "领取分红"
+                ],
+                "roi": [
+                    880,
+                    609,
+                    189,
+                    61
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 60
+            }
+        },
+        "next": [
+            "BangPaiFuLiFenHongLingQu"
+        ]
+    },
+    "BangPaiFuLiFenHongLingQu": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "领取"
+                ],
+                "roi": [
+                    517,
+                    544,
+                    237,
+                    64
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 60
+            }
+        },
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "__mpe_external_进入-主界面_factionTask.json": {
+        "__mpe_code": {
+            "position": {
+                "x": 1740,
+                "y": 62
+            }
+        }
+    }
+}

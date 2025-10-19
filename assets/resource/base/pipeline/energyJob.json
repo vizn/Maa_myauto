@@ -1,0 +1,218 @@
+{
+    "__mpe_config_energyJob.json": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "energyJob.json",
+            "version": "v0.5.3"
+        }
+    },
+    "活力打工": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 125
+            }
+        },
+        "next": [
+            "点击打工",
+            "打开人物界面-成功",
+            "打开人物界面-过渡"
+        ],
+        "interrupt": [
+            "进入-主界面"
+        ]
+    },
+    "打开人物界面-过渡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "zonghe/chenghao.png",
+                    "zonghe/jiahao.png"
+                ],
+                "roi": [
+                    1206,
+                    637,
+                    66,
+                    57
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    51
+                ]
+            }
+        },
+        "pre_delay": 1000,
+        "post_delay": 2000,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 132
+            }
+        },
+        "next": [
+            "打开人物界面-成功"
+        ],
+        "interrupt": [
+            "打开人物界面-失败"
+        ]
+    },
+    "打开人物界面-失败": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "人物属性"
+                ],
+                "roi": [
+                    531,
+                    3,
+                    175,
+                    60
+                ]
+            }
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    51
+                ]
+            }
+        },
+        "inverse": true,
+        "pre_delay": 1000,
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 0
+            }
+        }
+    },
+    "打开人物界面-成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "人物属性"
+                ],
+                "roi": [
+                    531,
+                    3,
+                    175,
+                    60
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 309
+            }
+        },
+        "next": [
+            "点击活力使用"
+        ]
+    },
+    "点击活力使用": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "使用"
+                ],
+                "roi": [
+                    977,
+                    232,
+                    120,
+                    71
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 500,
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 294
+            }
+        },
+        "next": [
+            "点击打工"
+        ]
+    },
+    "打工完成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "您的活力值不够"
+                ]
+            }
+        },
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "点击打工": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "打工"
+                ],
+                "roi": [
+                    891,
+                    202,
+                    152,
+                    438
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "打工完成"
+        ],
+        "interrupt": [
+            "点击打工"
+        ],
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 284
+            }
+        }
+    },
+    "__mpe_external_进入-主界面_energyJob.json": {
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 157
+            }
+        }
+    }
+}

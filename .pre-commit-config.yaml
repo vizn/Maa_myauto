@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-json
+        files: ^assets/resource/base/pipeline/.*\.json$
+      - id: pretty-format-json
+        files: ^assets/resource/base/pipeline/.*\.json$
+        args:
+          - --autofix
+          - --indent
+          - "4"
+          - --no-sort-keys
+          - --no-ensure-ascii

@@ -1,0 +1,487 @@
+{
+    "__mpe_config_singInJob.json": {
+        "__mpe_code": {
+            "prefix": "",
+            "filename": "singInJob.json",
+            "version": "v0.5.3"
+        }
+    },
+    "领取福利": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "next": [
+            "fuli_qiandao-ocr"
+        ],
+        "interrupt": [
+            "进入-主界面"
+        ]
+    },
+    "fuli_qiandao-ocr": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "福利"
+                ]
+            },
+            "roi": [
+                1,
+                112,
+                72,
+                65
+            ]
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 37
+            }
+        },
+        "next": [
+            "dakaiguaguale"
+        ]
+    },
+    "dakaiguaguale": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "打开刮刮乐"
+                ],
+                "roi": [
+                    877,
+                    590,
+                    229,
+                    79
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 37
+            }
+        },
+        "next": [
+            "qiandaohuadong"
+        ]
+    },
+    "qiandaohuadong": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    633,
+                    365,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        1048,
+                        364,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": 500
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 22
+            }
+        },
+        "next": [
+            "qiandaohuadong2"
+        ]
+    },
+    "qiandaohuadong2": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    615,
+                    383,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        1051,
+                        383,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": 500
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 22
+            }
+        },
+        "next": [
+            "qiandaohuadong3"
+        ]
+    },
+    "qiandaohuadong3": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    629,
+                    418,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        1053,
+                        418,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": 500
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 22
+            }
+        },
+        "next": [
+            "qiandaohuadong4"
+        ]
+    },
+    "qiandaohuadong4": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    606,
+                    399,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        1069,
+                        401,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": 500
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1740,
+                "y": 22
+            }
+        },
+        "next": [
+            "qiandaohuadong5"
+        ]
+    },
+    "qiandaohuadong5": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    617,
+                    449,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        1056,
+                        450,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": 500
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2030,
+                "y": 22
+            }
+        },
+        "next": [
+            "qiandaohuadong6"
+        ]
+    },
+    "qiandaohuadong6": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    597,
+                    462,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        1048,
+                        472,
+                        1,
+                        1
+                    ]
+                ],
+                "duration": 500
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2320,
+                "y": 22
+            }
+        },
+        "next": [
+            "click_fuli_leiji1"
+        ]
+    },
+    "click_fuli_leiji1": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/leiji2.png",
+                "roi": [
+                    789,
+                    638,
+                    98,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2610,
+                "y": 37
+            }
+        },
+        "next": [
+            "click_fuli_leiji1_lingqu"
+        ]
+    },
+    "click_fuli_leiji1_lingqu": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    800,
+                    564,
+                    78,
+                    77
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2900,
+                "y": 52
+            }
+        },
+        "next": [
+            "click_fuli_leiji2"
+        ]
+    },
+    "click_fuli_leiji2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/leiji5.png",
+                "roi": [
+                    903,
+                    639,
+                    99,
+                    41
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3190,
+                "y": 37
+            }
+        },
+        "next": [
+            "click_fuli_leiji2_lingqu"
+        ]
+    },
+    "click_fuli_leiji2_lingqu": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    915,
+                    564,
+                    76,
+                    72
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3480,
+                "y": 52
+            }
+        },
+        "next": [
+            "click_fuli_leiji3"
+        ]
+    },
+    "click_fuli_leiji3": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "qiandao/leiji7.png",
+                "roi": [
+                    1019,
+                    639,
+                    101,
+                    41
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 3770,
+                "y": 37
+            }
+        },
+        "next": [
+            "click_fuli_leiji3_lingqu"
+        ]
+    },
+    "click_fuli_leiji3_lingqu": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1031,
+                    561,
+                    76,
+                    77
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 4060,
+                "y": 52
+            }
+        },
+        "next": [
+            "进入-主界面"
+        ]
+    },
+    "dakaibeibao": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": [
+                    57,
+                    33
+                ]
+            }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 159
+            }
+        }
+    },
+    "__mpe_external_进入-主界面_singInJob.json": {
+        "__mpe_code": {
+            "position": {
+                "x": 4350,
+                "y": 32
+            }
+        }
+    }
+}
